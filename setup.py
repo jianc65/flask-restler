@@ -12,19 +12,16 @@ def _read(fname):
     except IOError:
         return ''
 
-_meta = _read('flask_restler/__init__.py')
-_license = re.search(r'^__license__\s*=\s*"(.*)"', _meta, re.M).group(1)
-_project = re.search(r'^__project__\s*=\s*"(.*)"', _meta, re.M).group(1)
-_version = re.search(r'^__version__\s*=\s*"(.*)"', _meta, re.M).group(1)
+_meta = _read('flask_restler_pw3/__init__.py')
 
 install_requires = [
     l for l in _read('requirements.txt').split('\n')
     if l and not l.startswith('#') and not l.startswith('-')]
 
 setup(
-    name=_project,
-    version=_version,
-    license=_license,
+    name="flask_restler_pw3",
+    version="0.0.1",
+    license="",
     description='Build REST API for Flask using Marshmallow.',
     long_description=_read('README.rst'),
     platforms=('Any'),
@@ -32,7 +29,7 @@ setup(
 
     author='Kirill Klenov',
     author_email='horneds@gmail.com',
-    url='https://github.com/klen/flask-restler',
+    url='https://github.com/jianc65/flask-restler',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
